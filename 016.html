@@ -1,0 +1,58 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Geely Group puts forward a new scheme to automatically construct the global map of underground garage - SOFTWARE DOWNLOAD | APP REVIEW</title>
+<meta name="description" content="software download,tech news" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+<!--
+.STYLE1 {
+	font-size: 36px;
+	font-weight: bold;
+}
+.STYLE2 {
+	font-size: 16px;
+	font-weight: bold;
+}
+.STYLE3 {font-size: 16px}
+-->
+</style>
+</head>
+
+<body>
+<table width="100%" height="236" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="90"><div align="center" class="STYLE1"><a href="https://software-download2030.github.io">SOFTWARE DOWNLOAD | APP REVIEW</a></div></td>
+  </tr>
+  <tr>
+    <td><p>&nbsp;</p>
+	  <div align="center">
+	    <p><a href="#" ><img src="https://www.qingtips.com/500.gif"/></a> </p>
+	    <p>&nbsp;</p>
+	  </div>
+	  <p align="center" class="STYLE2">Geely Group puts forward a new scheme to automatically construct the global map of underground garage</p>
+	  <p align="center" class="STYLE2"><img src="016.png" width="514" height="755"></p>
+	  
+	  
+	  
+      <p>The construction scheme of underground garage global map invented by Geely Group solves the problem of image distortion by using the anti distortion perspective transformation function, and constructs the global map of Underground Garage Based on the corresponding target marker image in a continuous period of time, so as to realize the construction method of underground garage global map with low cost and high quality.<br>
+        Based on micro network information, indoor map building is a technology to reconstruct indoor scene by vision or lidar. This technology has important value for indoor positioning, indoor navigation and other applications.<br>
+        At present, the related technologies usually use ultra wideband positioning, ultrasonic sensors, geomagnetic detectors and other technologies for indoor positioning and map construction. This scheme has a good effect for areas with rich scene features. However, when faced with a single environment such as an underground garage and highly repetitive textures (such as walls, poles and floors), the feature detection and matching mechanism will become unstable. In addition, the light in these scenes is usually weak, so the specificity of traditional descriptors for map construction is very poor.<br>
+        Therefore, when using ultra wideband positioning, ultrasonic sensor, geomagnetic detector and other technologies to construct the map of underground garage, the underground garage is often transformed, which not only increases the cost of the scheme, but also makes the detection effect worse.<br>
+        Therefore, on October 29, 2020, Geely Group applied for an invention patent (application No.: 202011179083.7) named &quot;a construction method and device of underground garage global map&quot;, and the applicant is Zhejiang Geely Holding Group Co., Ltd.<br>
+        According to the relevant information of the patent, let's take a look at the automatic construction scheme of the global map of the underground garage.<br>
+        As shown in the figure above, it is the flow diagram of the construction method of the global map of the underground garage invented in the patent. Firstly, the system will obtain multiple environmental source images of the underground garage around the vehicle in a continuous period of time by using multiple look around cameras. Due to the different attributes of cameras and acquisition angles, there will be image distortion and perspective problems. Therefore, the collected images can not be used directly, but need to use the preset anti distortion perspective transformation function to correct the underground garage environment image at each moment, as shown in the following figure:<br>
+        Since the distortion image correction mainly uses the anti distortion angle transformation function, the system determines the anti distortion matrix and angle transformation matrix based on the camera's internal and external parameters, and determines the anti distortion angle transformation function according to the two matrices. Any pixel in the underground garage environment image is mapped to the corresponding pixel in the corrected image through the nonlinear interpolation correction algorithm And the corrected image is generated.<br>
+        However, after getting the corrected image, a new problem appears again. Because the corrected image is quite different from that before correction, how to find the actual area corresponding to the corrected image? To solve this problem, the scheme uses the preset detection unit to detect the eigenvalues of multiple regions in the image to determine the feature points in each corrected image, and divides the image into blocks, and then calculates the gradient histogram of the block image.<br>
+        Gradient histogram can not only further enhance the ability of anti noise, but also provide higher fault tolerance for feature matching with location error. Then, based on the obtained gradient histogram, multiple corrected images at the same time are matched, so that the actual region corresponding to the corrected image can be found. Finally, each pixel in the target matching image is identified by using the preset marker model, and the target marker image is output. After a continuous period of time, the global image of the underground garage can be constructed according to the corresponding target marker image.<br>
+      The above is the construction scheme of underground garage global map invented by Geely Group. This scheme uses the anti distortion perspective transformation function to solve the problem of image distortion, and constructs the global map of Underground Garage Based on the corresponding target marker image in a continuous period of time, so as to realize the construction of the global map of underground garage, which not only uses low cost, but also obtains the global map of underground garage The image is stable and reliable.</p>
+    </td>
+  </tr>
+</table>
+<p align="center"><a href="1.html">SITEMAP</a></p>
+<div id="copyright">
+	<p align="center">&copy; momodl.com. All rights reserved.</p>
+</div>
+<div align="center"></div>
+</body>
+</html>
