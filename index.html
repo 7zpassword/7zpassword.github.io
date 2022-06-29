@@ -1,69 +1,248 @@
-<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>SOFTWARE DOWNLOAD | APP REVIEW</title>
-<meta name="description" content="software download,tech news" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style type="text/css">
-<!--
-.STYLE1 {
-	font-size: 36px;
-	font-weight: bold;
-}
-.STYLE2 {
-	font-size: 16px;
-	font-weight: bold;
-}
--->
-</style>
-</head>
+	
 
+	<title>
+		Make Photo Gallery - Photo Combination Tool
+	</title>
+	<link href="bootstrap.min.css" rel="stylesheet">
+	<link href="base.css" rel="stylesheet">
+	<script type='text/javascript'>
+		var msgError = "There are images that are not loaded yet.\\n\nPlease try again in a few minutes.";
+	</script>
+
+</head>
 <body>
-<table width="100%" height="236" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td height="90"><div align="center" class="STYLE1"><a href="https://software2download2030a.github.io">SOFTWARE DOWNLOAD | APP REVIEW</a></div></td>
-  </tr>
-  <tr>
-    <td><p>&nbsp;</p>
-	  <div align="center">
-	    <p><a href="#" ><img src="https://www.qingtips.com/500.gif"/></a> </p>
-	    <p>&nbsp;</p>
-	  </div>
-	  <p class="STYLE2">Denuvo encryption announced landing ps5 platform: anti cracking and cheating, the official said it will not affect the performance of the game</p>
-	  <p class="STYLE2"><br>
-	    US carriers compete for 5g network speed, Verizon is the slowest to download <br> <br> 
-BYD pure electric new species EA1 Promo: first use of ocean design concept <br> <br>
-Cook: Apple's M1 MAC has surpassed Intel's in sales in the same period <br><br>
-Dell introduces new achievement 5310 Notebook: i5-11300h + MX 450, 16:10 2K screen <br><br>
-Apple M1 iPad Pro front camera supports the character center function and will be open to third-party apps <br><br>
-Station B BiliBili publishes patents related to "real-time chat method", which can reduce the operation of constantly turning up and looking up messages <br><br>
-Huawei publishes patents related to "long distance wireless charging" <br><br>
-Apple iPad Pro 2021 released, IDC: 5g tablet market share will reach 6% in 2021 <br><br>
-Amazon develops Gallery in London to test new technologies such as augmented reality hairstyle <br><br>
-Affected by the decline in model 3 registration, Tesla Q1 California new car registration fell year on year <br><br>
-Revelations: NVIDIA rtx3080ti's new mining power has been halved, and it was launched in May, with a price of 7999 yuan <br><br>
-Hisense disclosed three major layouts of automotive electronics for the first time: vehicle road coordination, intelligent cockpit and vehicle thermal management <br><br>
-Musk's value has been surpassed by LV boss, ranking third on Forbes rich list <br><br>
-	    Naming confirmation: Nokia G10 is certified in Malaysia<br>
-		 <br>
-	    Counterpoint: apple and vivo rank first in Asia's smartphone market in Q4 in 2020<br>
-		 <br>
-"Biochemical crisis 8" ps5 capacity open, support advance preload<br>
- <br>
- MSI official test game mining efficiency: Mobile RTX 3080 reaches desktop 3070 level<br>
- <br>
- NVIDIA RTX 3060 anti mining function has been cracked by a Chinese mod<br>
- <br>
- Deep operating system starts recruitment plan of ecological co-workers<br>
- </p>
-    </p></td>
-  </tr>
-</table>
-<p>&nbsp;</p>
-<p align="center"><a href="1.html">SITEMAP</a></p>
-<div id="copyright">
-	<p align="center">&copy; momodl.com. All rights reserved.</p>
-</div>
-<div align="center"></div>
+
+	<div class='container'>
+
+		<div style='margin:20px 0;clear:both;'>
+			<!-- MakePhotoGallery.net - top left -->
+			
+		</div>
+
+
+		<div id='header'>
+			<h1>
+				Make Photo Gallery
+			</h1>
+			<img src='/a/makephotogallery/top.png' />
+			<p class="lead">
+				Make Photo Gallery is a online gallery tool that automatically combines many photos into a nicely arranged single panel of photos.
+			</p>
+		</div>
+
+
+
+		<div id='error' class="alert alert-error" style='display:none;'>
+			<h4>Error</h4>Your browser doesn't support this functions. You have to use the latest version of Google Chrome or
+			Firefox.
+		</div>
+
+
+
+		<div class='row'>
+			<div class='line'>&nbsp;</div>
+			<div class='span3'>
+				<h2>1.
+					Input
+				</h2>
+				<p>
+					Select photos on your computer to process into a combined image. Don't upload Any Big sized photos if your computer is
+					too old to deal with it.
+				</p>
+				<button class='btn btn-link' id='reset'><i class='icon-ban-circle'></i>
+					Reset
+				</button>
+			</div>
+			<div class='span9'>
+				<input id='files' type='file' name='files[]' multiple />
+				<div id="dropZone">
+					Drop photo files here.
+				</div>
+				<div id='thumbnail'></div>
+				<div id='hiddenThumbnailWrapper'>
+					<div id='hiddenThumbnail'></div>
+				</div>
+			</div>
+		</div>
+
+		<div class='row'>
+			<div class='line'>&nbsp;</div>
+			<div class='span3'>
+				<h2>2.
+					Options
+				</h2>
+				<p>
+					Choose options you want.
+				</p>
+			</div>
+			<div class='span9'>
+				<fieldset>
+					<legend>
+						Background
+					</legend>
+					<div id='optBackground' class="btn-group" data-toggle="buttons-radio">
+						<button type="button" class="btn active" value='white'>
+							<div class='background' style='background:white;'></div>
+							White
+						</button>
+						<button type="button" class="btn" value='black'>
+							<div class='background' style='background:black;'></div>
+							Black
+						</button>
+						<button type="button" class="btn" value='transparency'>
+							<div class='background' style='background:url(/a/makephotogallery/t.gif);'></div>
+							Transparent
+						</button>
+						<button id='btn_user_color' type="button" class="btn" value="user">
+							<div class='background' style='background:#4c9f4a;margin-top:4px'></div>
+							Custom(RGB) : <input id='user_color' type='text' maxlength="6" size="6" value="4c9f4a" style="margin: 0;padding: 1px 9px;width: 70px;" ; />
+						</button>
+					</div>
+				</fieldset>
+
+<fieldset>
+					<legend>
+						Column
+					</legend>
+					<div id='optColumn' class="btn-group" data-toggle="buttons-radio">
+						<button type="button" class="btn" value='1'>
+							<div class='block'></div>
+						</button>
+						<button type="button" class="btn active" value='2'>
+							<div class='block'></div>
+							<div class='block'></div>
+						</button>
+						<button type="button" class="btn" value='3'>
+							<div class='block'></div>
+							<div class='block'></div>
+							<div class='block'></div>
+						</button>
+						<button type="button" class="btn" value='4'>
+							<div class='block'></div>
+							<div class='block'></div>
+							<div class='block'></div>
+							<div class='block'></div>
+						</button>
+						<button type="button" class="btn" value='5'>
+							<div class='block'></div>
+							<div class='block'></div>
+							<div class='block'></div>
+							<div class='block'></div>
+							<div class='block'></div>
+						</button>
+						<button type="button" class="btn" value='6'>
+							<div class='block'></div>
+							<div class='block'></div>
+							<div class='block'></div>
+							<div class='block'></div>
+							<div class='block'></div>
+							<div class='block'></div>
+						</button>
+						<button type="button" class="btn" value='7'>
+							<div class='block'></div>
+							<div class='block'></div>
+							<div class='block'></div>
+							<div class='block'></div>
+							<div class='block'></div>
+							<div class='block'></div>
+							<div class='block'></div>
+						</button>
+						<button id='btn_user_cloumn' type="button" class="btn" value="8">
+							Custom : <input id='user_column' type='text' maxlength="2" value="8" style="margin: 0;padding: 1px 9px;width: 40px;" ; />
+						</button>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>
+						Max-width
+					</legend>
+					<div id='optMaxWidth' class='btn-group' data-toggle='buttons-radio'>
+						<button type='button' class='btn' value='400'>400px</button>
+						<button type='button' class='btn' value='600'>600px</button>
+						<button type='button' class='btn active' value='800'>800px</button>
+						<button type='button' class='btn' value='1000'>1000px</button>
+						<button type='button' class='btn' value='1200'>1200px</button>
+						<button type='button' class='btn' value='2400'>2400px</button>
+						<button type='button' class='btn' value='4000'>4000px(Almost raw)</button>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>
+						Margin
+					</legend>
+					<div id='optMargin' class='btn-group' data-toggle='buttons-radio'>
+						<button type='button' class='btn' value='0'>None</button>
+						<button type='button' class='btn active' value='10'>10px</button>
+						<button type='button' class='btn' value='20'>20px</button>
+						<button type='button' class='btn' value='30'>30px</button>
+						<button type='button' class='btn' value='40'>40px</button>
+						<button type='button' class='btn' value='50'>50px</button>
+					</div>
+				</fieldset>
+
+				<fieldset>
+					<legend>
+						Made by
+					</legend>
+					<label><input type='text' name='copyright' value="www.MakePhotoGallery.net" size='30' /></label>
+				</fieldset>
+			</div>
+		</div>
+
+
+<div class='row'>
+			<div class='line'>&nbsp;</div>
+			<div class='span3'>
+				<h2>3.
+					Action
+				</h2>
+				<p>
+					Click the `Combine Photos` Button to start processing.
+				</p>
+				<div style='margin:60px 0 0 5px;'>
+					<ins class="adsbygoogle" style="display:inline-block;width:200px;height:200px" data-ad-client="ca-pub-8943439166116693"
+						data-ad-slot="4796682641"></ins>
+				</div>
+			</div>
+			<div class='span9'>
+				<button id='run' type="submit" style="padding-bottom: 28px;" class="btn btn-large btn-primary btn-block"
+					data-loading-text="Processing..."
+					data-complete-text="Re-Combine Photos"><i class="icon-th-large icon-white"></i>
+					Combine Photos
+				</button>
+				<canvas id='canvas'></canvas>
+				<div id='result_msg' class='img-rounded'>
+					Combined image will be displayed here.
+				</div>
+				<div id='size'></div>
+				<img id='result' title="Click right button of your mouse over the image and save with `Save As...` option" />
+
+				<div style="margin-top: 10px;" id="controlbar">
+					<a class="btn btn-small" id="btnDownload" data-type="download"><i class="icon-download"></i>
+						Download
+					</a>
+				</div>
+			</div>
+
+		</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="jquery-ui-1.8.23.custom.min.js"></script>
+	<script src="bootstrap.min.js"></script>
+	<script src="tool.js?ao=322342342243"></script>
+	<script src="//cdn.jsdelivr.net/g/filesaver.js"></script>
+
+
 </body>
+
 </html>
+
+
+
+
+
+
+
