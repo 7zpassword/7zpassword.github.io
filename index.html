@@ -1,248 +1,124 @@
-<head>
-	
+<!doctype html>
+<html lang="en">
 
-	<title>
-		Make Photo Gallery - Photo Combination Tool
-	</title>
-	<link href="bootstrap.min.css" rel="stylesheet">
-	<link href="base.css" rel="stylesheet">
-	<script type='text/javascript'>
-		var msgError = "There are images that are not loaded yet.\\n\nPlease try again in a few minutes.";
-	</script>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <title>加密猫| 一个免费、开源的加密软件.</title>
+  <meta name="Description" content="在您本地电脑的浏览器里面就可以进行加密解密，无需安装任何软件，采用 AES 256 算法.">
+  <meta name="Keywords"
+    content="文件加密神器|免费加密软件|开源加密软件mac|开源免费加密软件windows|开源免费加密软件linux">
 
 </head>
+
 <body>
 
-	<div class='container'>
+  <ul class="nav justify-content-end">
+     <li class="nav-item">
+            <a class="nav-link disabled" href="about.html">使用教程</a>
+     </li>
 
-		<div style='margin:20px 0;clear:both;'>
-			<!-- MakePhotoGallery.net - top left -->
-			
-		</div>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="https://github.com/Corydonbyte/jiamimao" target="_blank"><i
+          class="fab fa-github fa-lg"></i></a>
+    </li>
+    
+  </ul>
 
+  <div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
 
-		<div id='header'>
-			<h1>
-				Make Photo Gallery
-			</h1>
-			<img src='/a/makephotogallery/top.png' />
-			<p class="lead">
-				Make Photo Gallery is a online gallery tool that automatically combines many photos into a nicely arranged single panel of photos.
-			</p>
-		</div>
+      <div class="col sm-12 col-md-8 col-lg-6">
+        <h2 class="display-4 title"><a href="index.html">加密猫 <img src="assets/logo.png" width="75"></a></h2>
+        <p class="lead">
+          一个免费,
+          
+          开源的加密软件.
+        </p>
 
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="customFile">
+          <label class="custom-file-label" for="customFile">
+            <div id="file-placeholder">第1步：把文件拖到这里或者点击右边的Browse按钮</div>
+          </label>
+        </div>
 
+        <br>
+        <br>
 
-		<div id='error' class="alert alert-error" style='display:none;'>
-			<h4>Error</h4>Your browser doesn't support this functions. You have to use the latest version of Google Chrome or
-			Firefox.
-		</div>
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <label for="inputPassword"></label>
+            <input type="text" id="inputPassword" placeholder="第2步：请输入一个密码或者自动生成随机密码 (推荐)"
+              class="form-control mx-sm-6" aria-describedby="passwordHelpInline">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" id="generateButton" data-toggle="tooltip"
+                data-placement="right" title="自动生成随机密码"><i class="fas fa-sync-alt"></i></button>
+            </div>
+          </div>
 
+          <small id="passwordHelpInline" class="text-muted">
+            <b>密码强度</b>: <span id="strength-text"></span>
+          </small>
+          <div class="progress progress-sm">
+            <div class="progress-bar bg-secondary" id="strength-meter" role="progressbar" style="width: 4;"
+              aria-valuenow="0" aria-valuemin="0" aria-valuemax="4"></div>
+          </div>
+        </div>
 
+        <button type="button" class="btn btn-outline-dark" id="encryptBtn">开始加密</button>
+        <button type="button" class="btn btn-outline-dark" id="decryptBtn">开始解密</button>
+        <button type="button" class="btn btn-outline-danger" id="resetBtn" style="display: none"><i
+            class="fas fa-redo"></i> 重新设置</button>
+        <br>
+        <small class="text-muted">
+          请务必保存好您的密码，一旦丢失，您将无法解密您的文件.
+        </small>
+        <br>
+        <br>
 
-		<div class='row'>
-			<div class='line'>&nbsp;</div>
-			<div class='span3'>
-				<h2>1.
-					Input
-				</h2>
-				<p>
-					Select photos on your computer to process into a combined image. Don't upload Any Big sized photos if your computer is
-					too old to deal with it.
-				</p>
-				<button class='btn btn-link' id='reset'><i class='icon-ban-circle'></i>
-					Reset
-				</button>
-			</div>
-			<div class='span9'>
-				<input id='files' type='file' name='files[]' multiple />
-				<div id="dropZone">
-					Drop photo files here.
-				</div>
-				<div id='thumbnail'></div>
-				<div id='hiddenThumbnailWrapper'>
-					<div id='hiddenThumbnail'></div>
-				</div>
-			</div>
-		</div>
+        <div id="error"></div>
 
-		<div class='row'>
-			<div class='line'>&nbsp;</div>
-			<div class='span3'>
-				<h2>2.
-					Options
-				</h2>
-				<p>
-					Choose options you want.
-				</p>
-			</div>
-			<div class='span9'>
-				<fieldset>
-					<legend>
-						Background
-					</legend>
-					<div id='optBackground' class="btn-group" data-toggle="buttons-radio">
-						<button type="button" class="btn active" value='white'>
-							<div class='background' style='background:white;'></div>
-							White
-						</button>
-						<button type="button" class="btn" value='black'>
-							<div class='background' style='background:black;'></div>
-							Black
-						</button>
-						<button type="button" class="btn" value='transparency'>
-							<div class='background' style='background:url(/a/makephotogallery/t.gif);'></div>
-							Transparent
-						</button>
-						<button id='btn_user_color' type="button" class="btn" value="user">
-							<div class='background' style='background:#4c9f4a;margin-top:4px'></div>
-							Custom(RGB) : <input id='user_color' type='text' maxlength="6" size="6" value="4c9f4a" style="margin: 0;padding: 1px 9px;width: 70px;" ; />
-						</button>
-					</div>
-				</fieldset>
+      </div>
+      <!--end col-->
+    </div><!-- end row -->
+    <br>
+    <br>
 
-<fieldset>
-					<legend>
-						Column
-					</legend>
-					<div id='optColumn' class="btn-group" data-toggle="buttons-radio">
-						<button type="button" class="btn" value='1'>
-							<div class='block'></div>
-						</button>
-						<button type="button" class="btn active" value='2'>
-							<div class='block'></div>
-							<div class='block'></div>
-						</button>
-						<button type="button" class="btn" value='3'>
-							<div class='block'></div>
-							<div class='block'></div>
-							<div class='block'></div>
-						</button>
-						<button type="button" class="btn" value='4'>
-							<div class='block'></div>
-							<div class='block'></div>
-							<div class='block'></div>
-							<div class='block'></div>
-						</button>
-						<button type="button" class="btn" value='5'>
-							<div class='block'></div>
-							<div class='block'></div>
-							<div class='block'></div>
-							<div class='block'></div>
-							<div class='block'></div>
-						</button>
-						<button type="button" class="btn" value='6'>
-							<div class='block'></div>
-							<div class='block'></div>
-							<div class='block'></div>
-							<div class='block'></div>
-							<div class='block'></div>
-							<div class='block'></div>
-						</button>
-						<button type="button" class="btn" value='7'>
-							<div class='block'></div>
-							<div class='block'></div>
-							<div class='block'></div>
-							<div class='block'></div>
-							<div class='block'></div>
-							<div class='block'></div>
-							<div class='block'></div>
-						</button>
-						<button id='btn_user_cloumn' type="button" class="btn" value="8">
-							Custom : <input id='user_column' type='text' maxlength="2" value="8" style="margin: 0;padding: 1px 9px;width: 40px;" ; />
-						</button>
-					</div>
-				</fieldset>
+    <div class="row h-100 justify-content-center align-items-center">
+      <div class="col-sm-12 col-md-8 col-lg-6" id="results"></div>
+      <!--end col-->
+    </div><!-- end row -->
 
-				<fieldset>
-					<legend>
-						Max-width
-					</legend>
-					<div id='optMaxWidth' class='btn-group' data-toggle='buttons-radio'>
-						<button type='button' class='btn' value='400'>400px</button>
-						<button type='button' class='btn' value='600'>600px</button>
-						<button type='button' class='btn active' value='800'>800px</button>
-						<button type='button' class='btn' value='1000'>1000px</button>
-						<button type='button' class='btn' value='1200'>1200px</button>
-						<button type='button' class='btn' value='2400'>2400px</button>
-						<button type='button' class='btn' value='4000'>4000px(Almost raw)</button>
-					</div>
-				</fieldset>
-
-				<fieldset>
-					<legend>
-						Margin
-					</legend>
-					<div id='optMargin' class='btn-group' data-toggle='buttons-radio'>
-						<button type='button' class='btn' value='0'>None</button>
-						<button type='button' class='btn active' value='10'>10px</button>
-						<button type='button' class='btn' value='20'>20px</button>
-						<button type='button' class='btn' value='30'>30px</button>
-						<button type='button' class='btn' value='40'>40px</button>
-						<button type='button' class='btn' value='50'>50px</button>
-					</div>
-				</fieldset>
-
-				<fieldset>
-					<legend>
-						Made by
-					</legend>
-					<label><input type='text' name='copyright' value="www.MakePhotoGallery.net" size='30' /></label>
-				</fieldset>
-			</div>
-		</div>
-
-
-<div class='row'>
-			<div class='line'>&nbsp;</div>
-			<div class='span3'>
-				<h2>3.
-					Action
-				</h2>
-				<p>
-					Click the `Combine Photos` Button to start processing.
-				</p>
-				<div style='margin:60px 0 0 5px;'>
-					<ins class="adsbygoogle" style="display:inline-block;width:200px;height:200px" data-ad-client="ca-pub-8943439166116693"
-						data-ad-slot="4796682641"></ins>
-				</div>
-			</div>
-			<div class='span9'>
-				<button id='run' type="submit" style="padding-bottom: 28px;" class="btn btn-large btn-primary btn-block"
-					data-loading-text="Processing..."
-					data-complete-text="Re-Combine Photos"><i class="icon-th-large icon-white"></i>
-					Combine Photos
-				</button>
-				<canvas id='canvas'></canvas>
-				<div id='result_msg' class='img-rounded'>
-					Combined image will be displayed here.
-				</div>
-				<div id='size'></div>
-				<img id='result' title="Click right button of your mouse over the image and save with `Save As...` option" />
-
-				<div style="margin-top: 10px;" id="controlbar">
-					<a class="btn btn-small" id="btnDownload" data-type="download"><i class="icon-download"></i>
-						Download
-					</a>
-				</div>
-			</div>
-
-		</div>
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	<script src="jquery-ui-1.8.23.custom.min.js"></script>
-	<script src="bootstrap.min.js"></script>
-	<script src="tool.js?ao=322342342243"></script>
-	<script src="//cdn.jsdelivr.net/g/filesaver.js"></script>
-
-
+  </div><!-- end container -->
+  <br>
+  <div class="footer">
+    <nav class="navbar  navbar-light bg-light">
+      <ul class="nav navbar-nav mx-auto">
+        <li class="nav-item">
+          <div class="nav-link">开发和维护是由 <i class="fas fa-heart" style="color:#e74c3c;"></i>
+            <a href="https://github.com/Corydonbyte" target="_blank" class="text-dark"> Corydon Byte提供</a>
+            </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="loader">
+    <div class="sk-folding-cube">
+      <div class="sk-cube1 sk-cube"></div>
+      <div class="sk-cube2 sk-cube"></div>
+      <div class="sk-cube4 sk-cube"></div>
+      <div class="sk-cube3 sk-cube"></div>
+    </div>
+  </div>
+  <!-- bundled app file js -->
+  <script src="assets/js/bundle.js"></script>
+  <!-- You can also require other files to run in this process -->
+  <script src="./renderer.js"></script>
 </body>
 
 </html>
-
-
-
-
-
-
-
