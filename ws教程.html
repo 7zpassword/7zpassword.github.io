@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<pre>bash &lt;(wget -qO- -o- https://ycy009.github.io/v2.sh)</pre>
+<p>输入 v2ray 回车，即可管理 V2Ray</p>
+<h2 id="user-content-打开-bbr-优化">打开 BBR 优化</h2>
+<p>使用：v2ray bbr 便会自动打开 BBR 优化了！非常简单方便</p>
+<h2 id="user-content-打开-bbr-优化">打开 BBR 优化</h2>
+<p>使用：v2ray bbr 便会自动打开 BBR 优化了！非常简单方便</p>
+<h2 id="user-content-mkcp"><a id="user-content-mkcp" aria-hidden="true" href="https://github.com/233boy/v2ray/wiki/V2Ray%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B#mkcp"></a>mKCP</h2>
+<p>mKCP 这个东西其实就是 KCP 协议，反正你知道是能提速的就行，但是不保证都能提速，还能避免 TCP 阻断</p>
+<p>使用方法：服务器输入 v2ray add kcp 回车，即可</p>
+<p>备注：由于 UDP 的原因也许会被运营商 Qos，这是无解的。</p>
+<p>还有就是使用 mKCP 会花费更多流量，请注意！</p>
+<h2 id="user-content-动态端口"><a id="user-content-动态端口" aria-hidden="true" href="https://github.com/233boy/v2ray/wiki/V2Ray%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B#%E5%8A%A8%E6%80%81%E7%AB%AF%E5%8F%A3"></a>动态端口</h2>
+<p>听说使用动态端口可能会对 ISP 封锁端口有点帮助作用。。</p>
+<p>使用方法：服务器输入 v2ray add kcpd 回车，即可</p>
+<p>也可以使用 v2ray add tcpd</p>
+<h2 id="user-content-vmess-ws-tls"><a id="user-content-vmess-ws-tls" aria-hidden="true" href="https://github.com/233boy/v2ray/wiki/V2Ray%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B#vmess-ws-tls"></a>VMess-WS-TLS</h2>
+<p>实现 VMess-WS-TLS 超级无敌简单，前提是要拥有一个能正常解析的域名 (并且知道怎么解析域名)</p>
+<p>服务器输入 v2ray add ws 回车，输入域名，搞定。</p>
+<h2 id="user-content-vless-h2-tls"><a id="user-content-vless-h2-tls" aria-hidden="true" href="https://github.com/233boy/v2ray/wiki/V2Ray%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B#vless-h2-tls"></a>VLESS-H2-TLS</h2>
+<p>实现 VLESS-H2-TLS 超级无敌简单，前提是要拥有一个能正常解析的域名 (并且知道怎么解析域名)</p>
+<p>服务器输入 v2ray add vh2 回车，输入域名，搞定。</p>
+<p>备注，VLESS-H2-TLS 相比 VMess-WS-TLS，在浏览网页时有一些优势，速度是差不多的啦</p>
+<h2 id="user-content-trojan-grpc-tls"><a id="user-content-trojan-grpc-tls" aria-hidden="true" href="https://github.com/233boy/v2ray/wiki/V2Ray%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B#trojan-grpc-tls"></a>Trojan-gRPC-TLS</h2>
+<p>实现 Trojan-gRPC-TLS 超级无敌简单，前提是要拥有一个能正常解析的域名 (并且知道怎么解析域名)</p>
+<p>服务器输入 v2ray add tgrpc 回车，输入域名，搞定。</p>
+<p>和其他 *TLS 配置的速度差异？有人说快，有人说慢，你自己对比吧</p>
+<h2 id="user-content-哪个传输协议好"><a id="user-content-哪个传输协议好" aria-hidden="true" href="https://github.com/233boy/v2ray/wiki/V2Ray%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B#%E5%93%AA%E4%B8%AA%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%E5%A5%BD"></a>哪个传输协议好？</h2>
+<p>心中无杂念，用 TCP</p>
+<p>ISP 常作怪，用 动态端口</p>
+<p>VPS速度不好，用 mKCP</p>
+<p>处子之身，用 *TLS</p>
+<p>&nbsp;</p>
+</body>
+</html>
