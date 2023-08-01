@@ -1,0 +1,169 @@
+#container {
+	min-width: 200px;
+	max-width: 800px;
+}
+
+#demo-container li {
+	min-height: 60px;
+}
+
+#file-list {
+	min-width: 200px;
+	padding-left: 10px;
+	padding-top: 12px;
+	font-family: 'Droid Sans Mono', courier;
+	white-space: nowrap;
+	min-height: 50px;
+	margin-bottom: 25px;
+}
+
+input[type=text], input[type=password], button, select, #file-list {
+	flex-grow: 1;
+	font-size: 12pt;
+	padding: 4px;
+	border: solid 1px #a7a7a7;
+	border-radius: 2.5px;
+	box-shadow: 1px 1px 1px #d8d8d8;
+	color: #444444;
+}
+
+#download-button[disabled] {
+	cursor: not-allowed;
+}
+
+#file-list.empty {
+	min-height: 25px;
+	background-color: #FFFFCC;
+}
+
+#file-list li {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	position: relative;
+	font-size: 11pt;
+	margin: .5em;
+	min-height: 35px;
+}
+
+#file-list li.pending {
+	color: #b1b1b1;
+}
+
+#file-list li.busy {
+	font-style: italic;
+}
+
+#file-list li.busy progress {
+	visibility: visible;
+}
+
+#file-list .filename-container {
+	display: flex;
+}
+
+#file-list .filename {
+	text-overflow: ellipsis;
+    overflow: hidden;
+	flex: 1;
+    margin-bottom: 8px;
+}
+
+#file-list .filename-container button {
+	display: none;
+	flex: 0;
+    font-size: 9px;
+    margin: 0;
+    padding: 3px;
+	padding-right: 4px;
+    height: 12px;
+	margin-left: 8px;	
+}
+
+#file-list .busy .filename-container button {
+	display: block;
+}
+
+.form-label {
+	min-width: 230px;
+	margin-top: 10px;
+	margin-right: 8px;
+}
+
+#demo-container {
+	margin-right: 10px;
+}
+
+input[type=text], input[type=password] {
+	height: 21px;
+}
+
+label {
+	display: flex;
+}
+
+input[type=text], input[type=password], button, select {
+	box-sizing: content-box;
+	height: 25px;
+	text-align: center;
+	outline-color: #c1c1c1;
+	background-color: #ececec;
+	width: 200px;
+}
+
+select {
+	text-align-last: center;
+}
+
+input[type=text]:hover, input[type=password]:hover, button:hover, select:hover {
+	
+}
+
+input[type=text][disabled], input[type=password][disabled], button[disabled], select[disabled] {
+	opacity: .5;
+	background-color: transparent;
+}
+
+button:not([disabled]), select:not([disabled]) {
+	cursor: pointer;
+}
+
+progress {
+	visibility: hidden;
+	display: block;
+	opacity: .7;
+	width: 100%;
+	height: 8px;
+	margin-top: -2px;
+}
+
+@media (max-width: 680px) {
+	label {
+		flex-direction: column;
+	}
+	.form-label {
+		min-width: 190px;
+		margin-bottom: 8px;
+	}
+	#demo-container {
+		margin-right: 0;
+	}
+	#demo-container>li {
+		min-height: 80px;
+	}
+	ol {
+		padding-left: 0;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	input[type="text"], input[type="password"], button, select {
+		background-color: #353535;
+	}
+	input[type="text"], input[type="password"], button, select, #file-list {
+		color: whitesmoke;
+	}
+	input[type="text"]:hover, input[type="password"]:hover, button:hover, select:hover {
+		background-color: #262626;
+	}
+}

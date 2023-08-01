@@ -1,0 +1,71 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Read a zip file (demo zip.js)</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="default.css">
+	<link rel="stylesheet" href="demo.css">
+	
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+
+<body>
+	<div id="container">
+		<h1>
+			<a href="../">zip.js</a> <span class="small"></span>
+		</h1>
+
+		<div class="description">
+			A JavaScript library to zip and unzip files
+			<hr>
+		</div>
+
+		<h2>Read a zip file (demo)</h2>
+
+		<ol id="demo-container">
+			<li>
+				<label>
+					<span class="form-label">choose a zip file</span>
+					<button id="file-input-button">Open...</button>
+					<input type="file" id="file-input" accept="application/zip" hidden>
+				</label>
+			</li>
+			<li id="encoding-item">
+				<label>
+					<span class="form-label">select the encoding of names</span>
+					<select id="encoding-input" disabled>
+						
+						<option>utf-8</option>
+						<option>gbk</option>
+						<option>gbk</option>
+						<option>gbk</option>
+						<option>gbk</option>
+						<option>gbk</option>
+						<option>gbk</option>
+						<option>gbk</option>
+						<option>gbk</option>
+						<option>gbk</option>
+					</select>
+				</label>
+			</li>
+			<li>
+				<label>
+					<span class="form-label">set the password</span>
+					<input type="password" id="password-input" value="" disabled>
+				</label>
+			</li>
+			<li>
+				<label>
+					<span class="form-label">download uncompressed files</span>
+					<ul id="file-list" class="empty">
+					</ul>
+				</label>
+			</li>
+		</ol>
+
+	</div>
+	<script type="text/javascript" src="lib/zip.min.js"></script>
+	<script type="text/javascript" src="demo-read-file.js"></script>
+</body>
+
+</html>
